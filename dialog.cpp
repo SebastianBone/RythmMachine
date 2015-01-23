@@ -251,6 +251,4 @@ void Dialog::initialize()
     pairUiButtonstoArray();
 
     initSlider();
-
-
 }
