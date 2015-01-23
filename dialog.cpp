@@ -18,6 +18,7 @@ Dialog::Dialog(QWidget *parent) :
 
     capWebCam.open(0);
 
+
     if(!capWebCam.isOpened()){
         ui->txtConsole->appendPlainText("***error***: check cammera settings");
         return;
@@ -108,16 +109,16 @@ void Dialog::on_btnPauseResume_clicked()
 void Dialog::processAudio(){
 
     if(beatButtons[index]->isChecked()){
-        beatAudio.playSound("/home/marko/Desktop/objectTrackingCV/kick.wav");
+        beatAudio.playSound("audio/KC.wav");
     }
     if(snareButtons[index]->isChecked()){
-        snareAudio.playSound("/home/marko/Desktop/objectTrackingCV/snare.wav");
+        snareAudio.playSound("audio/snare.wav");
     }
     if(hitButtons[index]->isChecked()){
-        hitAudio.playSound("/home/marko/Desktop/objectTrackingCV/hit.wav");
+        hitAudio.playSound("audio/hit.wav");
     }
     if(drumButtons[index]->isChecked()){
-        drumAudio.playSound("/home/marko/Desktop/objectTrackingCV/BD.wav");
+        drumAudio.playSound("audio/BD.wav");
     }
     index = (index + 1) % 8;
 

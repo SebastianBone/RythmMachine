@@ -64,10 +64,10 @@ linux* {
     PKGCONFIG += opencv
 }
 
+DESTDIR = $$PWD
+
 OTHER_FILES += \
-    BD.wav \
-    hit.mp3 \
-    kick.mp3 \
-    snare.wav \
-    kick.wav \
-    hit.wav
+    audio/BD.wav \
+    audio/KC.wav \
+    audio/snare.wav \
+    audio/hit.wav
