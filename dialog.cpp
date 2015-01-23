@@ -14,21 +14,7 @@ Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
 {
-    ui->setupUi(this);
-
-    capWebCam.open(0);
-
-
-    if(!capWebCam.isOpened()){
-        ui->txtConsole->appendPlainText("***error***: check cammera settings");
-        return;
-    }
-
-    timerStart();
-
-    pairUiButtonstoArray();
-
-    initSlider();
+    initialize();
 
 }
 ///////////////////////////////////////////////////////
@@ -245,5 +231,26 @@ void Dialog::initSlider(){
     ui->blueHigh->setRange(0,255);
     ui->greenHigh->setRange(0,255);
     ui->redHigh->setRange(0,255);
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+void Dialog::initialize()
+{
+    ui->setupUi(this);
+
+    capWebCam.open(0);
+
+    if(!capWebCam.isOpened()){
+        ui->txtConsole->appendPlainText("***error***: check cammera settings");
+        return;
+    }
+
+    timerStart();
+
+    pairUiButtonstoArray();
+
+    initSlider();
+
 
 }

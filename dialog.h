@@ -67,6 +67,7 @@ public slots:
     void pairUiButtonstoArray();
     void timerStart();
     void initSlider();
+    void initialize();
 
 
 private slots:
