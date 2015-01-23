@@ -22,7 +22,6 @@ protected:
 
 
 signals:
-    void buttonEvent();
 
 public slots:
     void delay();

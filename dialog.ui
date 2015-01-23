@@ -211,7 +211,7 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QPushButton" name="beat_1">
+        <widget class="ModQPushButton" name="beat_1">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -276,7 +276,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="beat_2">
+        <widget class="ModQPushButton" name="beat_2">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -341,7 +341,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="beat_3">
+        <widget class="ModQPushButton" name="beat_3">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -403,7 +403,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="beat_4">
+        <widget class="ModQPushButton" name="beat_4">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -465,7 +465,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="beat_5">
+        <widget class="ModQPushButton" name="beat_5">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -530,7 +530,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="beat_6">
+        <widget class="ModQPushButton" name="beat_6">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -592,7 +592,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="beat_7">
+        <widget class="ModQPushButton" name="beat_7">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -654,7 +654,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="beat_8">
+        <widget class="ModQPushButton" name="beat_8">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -728,7 +728,7 @@ QPushButton:checked{
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <widget class="QPushButton" name="clap_1">
+        <widget class="ModQPushButton" name="clap_1">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -886,7 +886,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="clap_2">
+        <widget class="ModQPushButton" name="clap_2">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -1044,7 +1044,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="clap_3">
+        <widget class="ModQPushButton" name="clap_3">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -1205,7 +1205,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="clap_4">
+        <widget class="ModQPushButton" name="clap_4">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -1363,7 +1363,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="clap_5">
+        <widget class="ModQPushButton" name="clap_5">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -1521,7 +1521,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="clap_7">
+        <widget class="ModQPushButton" name="clap_7">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -1679,7 +1679,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="clap_6">
+        <widget class="ModQPushButton" name="clap_6">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -1837,7 +1837,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="clap_8">
+        <widget class="ModQPushButton" name="clap_8">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2004,7 +2004,7 @@ QPushButton:checked{
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
        <item>
-        <widget class="QPushButton" name="hit_1">
+        <widget class="ModQPushButton" name="hit_1">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2036,7 +2036,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="hit_2">
+        <widget class="ModQPushButton" name="hit_2">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2068,7 +2068,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="hit_3">
+        <widget class="ModQPushButton" name="hit_3">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2100,7 +2100,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="hit_4">
+        <widget class="ModQPushButton" name="hit_4">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2132,7 +2132,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="hit_5">
+        <widget class="ModQPushButton" name="hit_5">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2164,7 +2164,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="hit_6">
+        <widget class="ModQPushButton" name="hit_6">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2196,7 +2196,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="hit_7">
+        <widget class="ModQPushButton" name="hit_7">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2228,7 +2228,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="hit_8">
+        <widget class="ModQPushButton" name="hit_8">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2269,7 +2269,7 @@ QPushButton:checked{
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_6">
        <item>
-        <widget class="QPushButton" name="drum_1">
+        <widget class="ModQPushButton" name="drum_1">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2301,7 +2301,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="drum_2">
+        <widget class="ModQPushButton" name="drum_2">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2333,7 +2333,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="drum_3">
+        <widget class="ModQPushButton" name="drum_3">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2365,7 +2365,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="drum_4">
+        <widget class="ModQPushButton" name="drum_4">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2397,7 +2397,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="drum_7">
+        <widget class="ModQPushButton" name="drum_7">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2429,7 +2429,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="drum_5">
+        <widget class="ModQPushButton" name="drum_5">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2461,7 +2461,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="drum_6">
+        <widget class="ModQPushButton" name="drum_6">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2493,7 +2493,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="drum_8">
+        <widget class="ModQPushButton" name="drum_8">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -2557,6 +2557,13 @@ QPushButton:checked{
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ModQPushButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">modqpushbutton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

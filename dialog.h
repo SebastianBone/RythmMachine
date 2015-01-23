@@ -8,8 +8,7 @@
 #include <SFML/Audio.hpp>
 #include "audioengine.h"
 #include <QCursor>
-#include <QEvent>
-#include <QElapsedTimer>
+#include "modqpushbutton.h"
 
 /////////////////////////////////////////////////////////////
 namespace Ui {
@@ -45,7 +44,7 @@ private:
     std::vector<cv::Vec3f> vecCircles;
     std::vector<cv::Vec3f>::iterator itrCircles;
 
-    QTimer *tmrTimer,*audioTimer,*beatButtonsDelayTimer,*snareButtonsDelayTimer,*hitButtonsDelayTimer,*drumButtonsDelayTimer;
+    QTimer *tmrTimer,*audioTimer;
 
     int bH, gH, rH, bL, gL, rL;
 
@@ -60,10 +59,6 @@ private:
 
     QCursor *cursor;
 
-    QElapsedTimer timeDelay;
-
-public:
-    bool eventFilter(QObject *button, QEvent *event);
 
 public slots:
     void processFrameAndUpdateGUI();
@@ -72,14 +67,6 @@ public slots:
     void pairUiButtonstoArray();
     void timerStart();
     void initSlider();
-    void eventInstaller();
-    void beatButtonsDelay();
-    void snareButtonsDelay();
-    void hitButtonsDelay();
-    void drumButtonsDelay();
-    void setIndex(int Index);
-    int getIndex();
-    void indexTransfer();
 
 
 private slots:

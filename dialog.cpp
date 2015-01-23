@@ -29,8 +29,6 @@ Dialog::Dialog(QWidget *parent) :
 
     initSlider();
 
-    eventInstaller();
-
 }
 ///////////////////////////////////////////////////////
 Dialog::~Dialog()
@@ -93,9 +91,7 @@ void Dialog::processFrameAndUpdateGUI(){
     ui->lblProcessed->setPixmap(QPixmap::fromImage(imgProcessed.mirrored(true,false)));
     ui->lblSrc->setPixmap(QPixmap::fromImage(imgSrc.mirrored(true,false)));
 
-
 }
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Dialog::on_btnPauseResume_clicked()
@@ -225,7 +221,6 @@ void Dialog::pairUiButtonstoArray(){
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 void Dialog::timerStart(){
 
-
     tmrTimer = new QTimer(this);
     tmrTimer->setInterval(100);
     tmrTimer->setTimerType(Qt::PreciseTimer);
@@ -237,26 +232,6 @@ void Dialog::timerStart(){
     audioTimer->setTimerType(Qt::PreciseTimer);
     connect(audioTimer, SIGNAL(timeout()), this, SLOT(processAudio()));
     audioTimer->start();
-
-    beatButtonsDelayTimer = new QTimer(this);
-    beatButtonsDelayTimer->setInterval(1000);
-    beatButtonsDelayTimer->setTimerType(Qt::PreciseTimer);
-    connect(beatButtonsDelayTimer, SIGNAL(timeout()), this, SLOT(beatButtonsDelay()));
-
-    snareButtonsDelayTimer = new QTimer(this);
-    snareButtonsDelayTimer->setInterval(1000);
-    snareButtonsDelayTimer->setTimerType(Qt::PreciseTimer);
-    connect(snareButtonsDelayTimer, SIGNAL(timeout()), this, SLOT(snareButtonsDelay()));
-
-    hitButtonsDelayTimer = new QTimer(this);
-    hitButtonsDelayTimer->setInterval(1000);
-    hitButtonsDelayTimer->setTimerType(Qt::PreciseTimer);
-    connect(hitButtonsDelayTimer, SIGNAL(timeout()), this, SLOT(hitButtonsDelay()));
-
-    drumButtonsDelayTimer = new QTimer(this);
-    drumButtonsDelayTimer->setInterval(1000);
-    drumButtonsDelayTimer->setTimerType(Qt::PreciseTimer);
-    connect(drumButtonsDelayTimer, SIGNAL(timeout()), this, SLOT(drumButtonsDelay()));
 
 }
 
@@ -270,141 +245,4 @@ void Dialog::initSlider(){
     ui->greenHigh->setRange(0,255);
     ui->redHigh->setRange(0,255);
 
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-bool Dialog::eventFilter(QObject *button, QEvent *event){
-
-    for(btnIndex=0;btnIndex<=7;btnIndex++){
-
-        if(button == beatButtons[btnIndex]){
-            if(event->type() == QEvent::Enter){
-                indexTransfer();
-                beatButtonsDelayTimer->start();
-            }
-            if(event->type() == QEvent::Leave)
-                beatButtonsDelayTimer->stop();
-        }
-
-        else if(button == snareButtons[btnIndex]){
-            if(event->type() == QEvent::Enter){
-                indexTransfer();
-                snareButtonsDelayTimer->start();
-            }
-            if(event->type() == QEvent::Leave)
-                snareButtonsDelayTimer->stop();
-
-        }
-        else if(button == hitButtons[btnIndex]){
-            if(event->type() == QEvent::Enter){
-                indexTransfer();
-                hitButtonsDelayTimer->start();
-            }
-            if(event->type() == QEvent::Leave)
-                hitButtonsDelayTimer->stop();
-
-        }
-        else if(button == drumButtons[btnIndex]){
-            if(event->type() == QEvent::Enter){
-                indexTransfer();
-                drumButtonsDelayTimer->start();
-            }
-            if(event->type() == QEvent::Leave)
-                drumButtonsDelayTimer->stop();
-        }
-
-    }
-    return QDialog::eventFilter(button,event);
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-void Dialog::eventInstaller(){
-
-    ui->beat_1->installEventFilter(this);
-    ui->beat_2->installEventFilter(this);
-    ui->beat_3->installEventFilter(this);
-    ui->beat_4->installEventFilter(this);
-    ui->beat_5->installEventFilter(this);
-    ui->beat_6->installEventFilter(this);
-    ui->beat_7->installEventFilter(this);
-    ui->beat_8->installEventFilter(this);
-
-    ui->clap_1->installEventFilter(this);
-    ui->clap_2->installEventFilter(this);
-    ui->clap_3->installEventFilter(this);
-    ui->clap_4->installEventFilter(this);
-    ui->clap_5->installEventFilter(this);
-    ui->clap_6->installEventFilter(this);
-    ui->clap_7->installEventFilter(this);
-    ui->clap_8->installEventFilter(this);
-
-    ui->hit_1->installEventFilter(this);
-    ui->hit_2->installEventFilter(this);
-    ui->hit_3->installEventFilter(this);
-    ui->hit_4->installEventFilter(this);
-    ui->hit_5->installEventFilter(this);
-    ui->hit_6->installEventFilter(this);
-    ui->hit_7->installEventFilter(this);
-    ui->hit_8->installEventFilter(this);
-
-    ui->drum_1->installEventFilter(this);
-    ui->drum_2->installEventFilter(this);
-    ui->drum_3->installEventFilter(this);
-    ui->drum_4->installEventFilter(this);
-    ui->drum_5->installEventFilter(this);
-    ui->drum_6->installEventFilter(this);
-    ui->drum_7->installEventFilter(this);
-    ui->drum_8->installEventFilter(this);
-}
-
-void Dialog::beatButtonsDelay(){
-
-    if(beatButtons[idx]->isChecked()==false)
-        beatButtons[idx]->setChecked(true);
-    else
-        beatButtons[idx]->setChecked(false);
-
-    beatButtonsDelayTimer->stop();
-}
-
-void Dialog::snareButtonsDelay(){
-    if(snareButtons[idx]->isChecked()==false)
-        snareButtons[idx]->setChecked(true);
-    else
-        snareButtons[idx]->setChecked(false);
-
-    snareButtonsDelayTimer->stop();
-
-}
-
-void Dialog::hitButtonsDelay(){
-    if(hitButtons[idx]->isChecked()==false)
-        hitButtons[idx]->setChecked(true);
-    else
-        hitButtons[idx]->setChecked(false);
-
-    hitButtonsDelayTimer->stop();
-}
-
-void Dialog::drumButtonsDelay(){
-    if(drumButtons[idx]->isChecked()==false)
-        drumButtons[idx]->setChecked(true);
-    else
-        drumButtons[idx]->setChecked(false);
-
-    drumButtonsDelayTimer->stop();
-
-}
-
-void Dialog::setIndex(int Index){
-    btnIndex = Index;
-}
-
-int Dialog::getIndex(){
-    return btnIndex;
-}
-
-void Dialog::indexTransfer(){
-    idx = getIndex();
-    setIndex(idx);
 }
