@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1121</width>
-    <height>794</height>
+    <width>1046</width>
+    <height>725</height>
    </rect>
   </property>
   <property name="cursor">
@@ -19,11 +19,19 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog{
+
+	
+	
+	background-color: rgb(40, 40, 40);
+}</string>
+  </property>
   <widget class="QLabel" name="lblHSV">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>540</y>
+     <x>700</x>
+     <y>310</y>
      <width>320</width>
      <height>240</height>
     </rect>
@@ -41,8 +49,8 @@
   <widget class="QLabel" name="lblProcessed">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>540</y>
+     <x>700</x>
+     <y>40</y>
      <width>320</width>
      <height>240</height>
     </rect>
@@ -60,10 +68,10 @@
   <widget class="QPushButton" name="btnPauseResume">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>470</y>
-     <width>91</width>
-     <height>21</height>
+     <x>540</x>
+     <y>530</y>
+     <width>131</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
@@ -71,17 +79,20 @@
      <pointsize>10</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <property name="text">
-    <string>Pause</string>
+    <string>Pause Audio</string>
    </property>
   </widget>
   <widget class="QPlainTextEdit" name="txtConsole">
    <property name="geometry">
     <rect>
-     <x>670</x>
-     <y>20</y>
-     <width>441</width>
-     <height>291</height>
+     <x>30</x>
+     <y>550</y>
+     <width>471</width>
+     <height>141</height>
     </rect>
    </property>
    <property name="font">
@@ -90,6 +101,13 @@
      <pointsize>10</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPlainTextEdit{
+	
+	background-color: rgb(0, 0, 0);
+	color:white;
+}</string>
+   </property>
    <property name="readOnly">
     <bool>true</bool>
    </property>
@@ -97,11 +115,17 @@
   <widget class="QGroupBox" name="lowTreshhold">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>320</y>
+     <x>700</x>
+     <y>560</y>
      <width>81</width>
      <height>125</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QGroupBox{
+	
+	color: rgb(255, 255, 255);
+}</string>
    </property>
    <property name="title">
     <string>LOW</string>
@@ -133,11 +157,17 @@
   <widget class="QGroupBox" name="highTreshhold">
    <property name="geometry">
     <rect>
-     <x>830</x>
-     <y>320</y>
+     <x>870</x>
+     <y>560</y>
      <width>81</width>
      <height>125</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QGroupBox{
+	
+	color: rgb(255, 255, 255);
+}</string>
    </property>
    <property name="title">
     <string>HIGH</string>
@@ -194,8 +224,11 @@
      <height>481</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <property name="title">
-    <string>GroupBox</string>
+    <string/>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -207,7 +240,7 @@
        <bool>false</bool>
       </property>
       <property name="title">
-       <string>Beat</string>
+       <string>Spur 1</string>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
@@ -259,7 +292,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>b1</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -324,7 +357,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>b2</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -389,7 +422,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>b3</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -451,7 +484,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>b4</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -513,7 +546,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>b5</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -578,7 +611,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>b6</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -640,7 +673,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>b7</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -702,7 +735,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>b8</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -724,7 +757,7 @@ QPushButton:checked{
     <item>
      <widget class="QGroupBox" name="clap">
       <property name="title">
-       <string>Clap</string>
+       <string>Spur 2</string>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
@@ -878,7 +911,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>c1</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -1036,7 +1069,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>c2</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -1194,7 +1227,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>c3</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -1355,7 +1388,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>c4</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -1513,7 +1546,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>c5</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -1671,7 +1704,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>c6</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -1829,7 +1862,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>c7</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -1987,7 +2020,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>c8</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2000,7 +2033,7 @@ QPushButton:checked{
     <item>
      <widget class="QGroupBox" name="hit">
       <property name="title">
-       <string>Hit</string>
+       <string>Spur 3</string>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
        <item>
@@ -2028,7 +2061,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>h1</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2060,7 +2093,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>h2</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2092,7 +2125,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>h3</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2124,7 +2157,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>h4</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2156,7 +2189,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>h5</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2188,7 +2221,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>h6</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2220,7 +2253,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>h7</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2252,7 +2285,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>h8</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2265,7 +2298,7 @@ QPushButton:checked{
     <item>
      <widget class="QGroupBox" name="drum">
       <property name="title">
-       <string>Drum</string>
+       <string>Spur 4</string>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_6">
        <item>
@@ -2293,7 +2326,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>d1</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2325,7 +2358,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>d2</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2357,7 +2390,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>d3</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2389,7 +2422,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>d4</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2421,7 +2454,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>d5</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2453,7 +2486,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>d6</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2485,7 +2518,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>d7</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2517,7 +2550,7 @@ QPushButton:checked{
 </string>
          </property>
          <property name="text">
-          <string>d8</string>
+          <string/>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -2532,11 +2565,17 @@ QPushButton:checked{
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>520</y>
+     <x>700</x>
+     <y>290</y>
      <width>57</width>
      <height>14</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	
+	color: rgb(255, 255, 255);
+}</string>
    </property>
    <property name="text">
     <string>HSV</string>
@@ -2545,26 +2584,224 @@ QPushButton:checked{
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>520</y>
+     <x>700</x>
+     <y>20</y>
      <width>71</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	
+	color: rgb(255, 255, 255);
+}</string>
    </property>
    <property name="text">
     <string>Processed</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QLabel" name="labelSettings">
    <property name="geometry">
     <rect>
-     <x>740</x>
-     <y>550</y>
-     <width>41</width>
-     <height>31</height>
+     <x>690</x>
+     <y>10</y>
+     <width>341</width>
+     <height>701</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	border-style: solid;
+	border-width: 3px;
+	border-color: rgb(255, 255, 255);
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="lineWidth">
+    <number>2</number>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>661</width>
+     <height>501</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	border-style: solid;
+	border-width: 3px;
+	border-color: rgb(255, 255, 255);
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="lineWidth">
+    <number>2</number>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>530</y>
+     <width>511</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	border-style: solid;
+	border-width: 3px;
+	border-color: rgb(255, 255, 255);
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="lineWidth">
+    <number>2</number>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="BLSlideBox">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>590</y>
+     <width>51</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="GLspinBox">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>620</y>
+     <width>51</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="RLspinBox">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>650</y>
+     <width>51</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="BHspinBox">
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>590</y>
+     <width>51</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="GHspinBox">
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>620</y>
+     <width>51</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="RHspinBox">
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>650</y>
+     <width>51</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnPRCapt">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>590</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Pause Capturing</string>
+   </property>
+  </widget>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
+  <zorder>labelSettings</zorder>
+  <zorder>lblHSV</zorder>
+  <zorder>lblProcessed</zorder>
+  <zorder>btnPauseResume</zorder>
+  <zorder>txtConsole</zorder>
+  <zorder>lowTreshhold</zorder>
+  <zorder>highTreshhold</zorder>
+  <zorder>lblSrc</zorder>
+  <zorder>groupBox_2</zorder>
+  <zorder>label</zorder>
+  <zorder>label_3</zorder>
+  <zorder>BLSlideBox</zorder>
+  <zorder>blueLow</zorder>
+  <zorder>GLspinBox</zorder>
+  <zorder>RLspinBox</zorder>
+  <zorder>BHspinBox</zorder>
+  <zorder>GHspinBox</zorder>
+  <zorder>RHspinBox</zorder>
+  <zorder>btnPRCapt</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -2575,5 +2812,198 @@ QPushButton:checked{
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>blueLow</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>BLSlideBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>717</x>
+     <y>645</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>834</x>
+     <y>605</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BLSlideBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>blueLow</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>835</x>
+     <y>605</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>719</x>
+     <y>668</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>redLow</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>RLspinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>768</x>
+     <y>623</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>813</x>
+     <y>659</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RLspinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>redLow</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>810</x>
+     <y>667</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>760</x>
+     <y>621</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>greenLow</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>GLspinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>742</x>
+     <y>595</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>826</x>
+     <y>625</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GLspinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>greenLow</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>831</x>
+     <y>628</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>742</x>
+     <y>646</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>blueHigh</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>BHspinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>899</x>
+     <y>599</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>991</x>
+     <y>602</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BHspinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>blueHigh</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>984</x>
+     <y>612</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>897</x>
+     <y>611</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>greenHigh</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>GHspinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>921</x>
+     <y>637</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>977</x>
+     <y>635</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GHspinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>greenHigh</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>974</x>
+     <y>622</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>917</x>
+     <y>627</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>redHigh</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>RHspinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>947</x>
+     <y>654</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>986</x>
+     <y>657</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RHspinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>redHigh</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>976</x>
+     <y>670</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>944</x>
+     <y>668</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
