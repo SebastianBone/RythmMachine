@@ -85,12 +85,24 @@ void Dialog::on_btnPauseResume_clicked()
 {
     if(audioTimer->isActive() == true){
         audioTimer->stop();
-        ui->btnPauseResume->setText("Resume");
+        ui->btnPauseResume->setText("Resume Audio");
     } else{
         audioTimer->start();
-        ui->btnPauseResume->setText("Pause");
+        ui->btnPauseResume->setText("Pause Audio");
     }
 }
+
+void Dialog::on_btnPRCapt_clicked()
+{
+    if(tmrTimer->isActive() == true){
+        tmrTimer->stop();
+        ui->btnPRCapt->setText("Resume Capturing");
+    } else{
+        tmrTimer->start();
+        ui->btnPRCapt->setText("Pause Capturing");
+    }
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 void Dialog::processAudio(){
 
