@@ -90,13 +90,13 @@ void Dialog::processFrameAndUpdateGUI(){
     //erode(matProcessed, matProcessed, Mat());
 
     // convert opencv in QtImage
-    QImage imgOriginal((uchar*)matOriginal.data, matOriginal.cols, matOriginal.rows, matOriginal.step, QImage::Format_RGB888);
+    QImage imgHSV((uchar*)matOriginal.data, matOriginal.cols, matOriginal.rows, matOriginal.step, QImage::Format_RGB888);
     QImage imgProcessed((uchar*)matProcessed.data, matProcessed.cols, matProcessed.rows, matProcessed.step, QImage::Format_Indexed8);
     QImage imgSrc((uchar*)matSrc.data, matSrc.cols, matSrc.rows, matSrc.step, QImage::Format_RGB888);
 
 
     //set mirroring
-    ui->lblHSV->setPixmap(QPixmap::fromImage(imgOriginal.mirrored(true,false)));
+    ui->lblHSV->setPixmap(QPixmap::fromImage(imgHSV.mirrored(true,false)));
     ui->lblProcessed->setPixmap(QPixmap::fromImage(imgProcessed.mirrored(true,false)));
     ui->lblSrc->setPixmap(QPixmap::fromImage(imgSrc.mirrored(true,false)));
 
