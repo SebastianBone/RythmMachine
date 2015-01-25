@@ -1,15 +1,21 @@
+// include files and libraries
+
 #include "dialog.h"
 #include "ui_dialog.h"
 #include <QtCore>
 #include <SFML/Audio.hpp>
 #include <QtCore>
 #include <QDebug>
-#include <QtCore>
+
+// initialize namespaces
 
 using namespace std;
 using namespace cv;
 
 //////////////////////////////////////////////////////
+
+// initialize widget and user interface
+
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
@@ -18,6 +24,9 @@ Dialog::Dialog(QWidget *parent) :
 
 }
 ///////////////////////////////////////////////////////
+
+// destroy widget
+
 Dialog::~Dialog()
 {
     delete ui;
@@ -26,16 +35,26 @@ Dialog::~Dialog()
 ///////////////////////////////////////////////////////
 void Dialog::processFrameAndUpdateGUI(){
 
+
+    // read video in opencv mat-container
     capWebCam.read(matOriginal);
 
+    // clone container and color-mirroring
     matSrc = matOriginal.clone();
     cvtColor(matSrc, matSrc, CV_BGR2RGB);
 
+    // return if container is empty
     if(matOriginal.empty() == true) return;
 
+    // range of color-filter
     inRange(matOriginal, Scalar(bL,gL,rL), Scalar(bH,gH,rH), matProcessed); //over qSlider  (50,30,130)
+
+    // smoothing pixels
     GaussianBlur(matProcessed, matProcessed, Size(9,9), 1.5);
+
+    // filtered object
     HoughCircles(matProcessed, vecCircles, CV_HOUGH_GRADIENT, 2, matProcessed.rows / 4,100,50,10,400);
+
 
     for(itrCircles = vecCircles.begin(); itrCircles != vecCircles.end(); itrCircles++){
 
@@ -51,9 +70,11 @@ void Dialog::processFrameAndUpdateGUI(){
         //setting tracking point as a mouse cursor
         cursor->setPos(mapToGlobal(QPoint(640-(*itrCircles)[0], (*itrCircles)[1])));
 
+        //swipe left for play
         if (((*itrCircles)[0]) > 630 && !audioTimer->isActive()){
             audioTimer->start();
         }
+        //swipe right for pause
         if (((*itrCircles)[0]) < 5 && audioTimer->isActive()){
             audioTimer->stop();
         }
@@ -62,12 +83,13 @@ void Dialog::processFrameAndUpdateGUI(){
 
     cvtColor(matOriginal, matOriginal, CV_BGR2HSV);  //Convert 2 HSV
 
-
+    // scaling container
     matOriginal = rescale(matOriginal);
     matProcessed = rescale(matProcessed);
     //dilate(matProcessed, matProcessed, Mat());
     //erode(matProcessed, matProcessed, Mat());
 
+    // convert opencv in QtImage
     QImage imgOriginal((uchar*)matOriginal.data, matOriginal.cols, matOriginal.rows, matOriginal.step, QImage::Format_RGB888);
     QImage imgProcessed((uchar*)matProcessed.data, matProcessed.cols, matProcessed.rows, matProcessed.step, QImage::Format_Indexed8);
     QImage imgSrc((uchar*)matSrc.data, matSrc.cols, matSrc.rows, matSrc.step, QImage::Format_RGB888);
@@ -81,6 +103,8 @@ void Dialog::processFrameAndUpdateGUI(){
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// audio pause button
 void Dialog::on_btnPauseResume_clicked()
 {
     if(audioTimer->isActive() == true){
@@ -92,6 +116,7 @@ void Dialog::on_btnPauseResume_clicked()
     }
 }
 
+// video pause button
 void Dialog::on_btnPRCapt_clicked()
 {
     if(tmrTimer->isActive() == true){
@@ -104,6 +129,8 @@ void Dialog::on_btnPRCapt_clicked()
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// see which buttons are checked and play soundfile
 void Dialog::processAudio(){
 
     if(beatButtons[index]->isChecked()){
@@ -118,6 +145,7 @@ void Dialog::processAudio(){
     if(drumButtons[index]->isChecked()){
         drumAudio.playSound("audio/BD.wav");
     }
+    // index for soundinterval
     index = (index + 1) % 8;
 
 }
@@ -145,6 +173,9 @@ Mat Dialog::rescale(Mat &mat){
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// set values when slider changed
+
 void Dialog::on_blueLow_valueChanged(int value)
 {
     bL = value;
@@ -176,6 +207,9 @@ void Dialog::on_redHigh_valueChanged(int value)
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// save buttonlabels in lane-arrays
+
 void Dialog::pairUiButtonstoArray(){
 
     index = 0;
@@ -218,6 +252,8 @@ void Dialog::pairUiButtonstoArray(){
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// create and configure video and audio timer
 void Dialog::timerStart(){
 
     tmrTimer = new QTimer(this);
@@ -235,6 +271,9 @@ void Dialog::timerStart(){
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// initialize sliders
+
 void Dialog::initSlider(){
 
     ui->blueLow->setRange(0,255);
@@ -247,6 +286,9 @@ void Dialog::initSlider(){
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// initialize methods, capturing source and user interface
+
 void Dialog::initialize()
 {
     ui->setupUi(this);
