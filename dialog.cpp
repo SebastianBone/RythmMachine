@@ -4,7 +4,6 @@
 #include "ui_dialog.h"
 #include <QtCore>
 #include <SFML/Audio.hpp>
-#include <QtCore>
 #include <QDebug>
 
 // initialize namespaces
@@ -72,6 +71,8 @@ void Dialog::processFrameAndUpdateGUI(){
         //setting tracking point as a mouse cursor
         if(cursorTracking == true){
 
+
+
             //show position and radius of tracked object (just for debuging)
             ui->txtConsole->appendPlainText(QString("object position x =") + QString::number((*itrCircles)[0]).rightJustified(4, ' ')+
                     QString(", y =")+ QString::number((*itrCircles)[1]).rightJustified(4, ' ')+
@@ -117,18 +118,6 @@ void Dialog::on_btnPauseResume_clicked()
     } else{
         audioTimer->start();
         ui->btnPauseResume->setText("Pause Audio");
-    }
-}
-
-// video pause button
-void Dialog::on_btnPRCapt_clicked()
-{
-    if(tmrTimer->isActive() == true){
-        tmrTimer->stop();
-        ui->btnPRCapt->setText("Resume Capturing");
-    } else{
-        tmrTimer->start();
-        ui->btnPRCapt->setText("Pause Capturing");
     }
 }
 

@@ -77,7 +77,6 @@ private slots:
     void on_blueHigh_valueChanged(int value);
     void on_greenHigh_valueChanged(int value);
     void on_redHigh_valueChanged(int value);
-    void on_btnPRCapt_clicked();
     void on_btnCursorTr_clicked();
 };
 
