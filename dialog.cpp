@@ -121,6 +121,19 @@ void Dialog::on_btnPauseResume_clicked()
     }
 }
 
+//capturing pause button
+void Dialog::on_btnPRCapt_clicked()
+{
+    if(tmrTimer->isActive() == true){
+        tmrTimer->stop();
+        ui->btnPRCapt->setText("Resume Capturing");
+    } else{
+        tmrTimer->start();
+        ui->btnPRCapt->setText("Pause Capturing");
+    }
+}
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // see which buttons are checked and play soundfile

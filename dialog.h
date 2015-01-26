@@ -78,6 +78,7 @@ private slots:
     void on_greenHigh_valueChanged(int value);
     void on_redHigh_valueChanged(int value);
     void on_btnCursorTr_clicked();
+    void on_btnPRCapt_clicked();
 };
 
 #endif // DIALOG_H
