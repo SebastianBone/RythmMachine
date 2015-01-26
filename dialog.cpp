@@ -42,18 +42,29 @@ void Dialog::processFrameAndUpdateGUI(){
     // clone container and color-mirroring
     matSrc = matOriginal.clone();
     cvtColor(matSrc, matSrc, CV_BGR2RGB);
+    //from source to HSV
+    cvtColor(matSrc, matHSV, CV_RGB2HSV);
 
     // return if container is empty
     if(matOriginal.empty() == true) return;
 
     // range of color-filter
-    inRange(matOriginal, Scalar(bL,gL,rL), Scalar(bH,gH,rH), matProcessed); //over qSlider  (50,30,130)
+    //inRange(matOriginal, Scalar(bL,gL,rL), Scalar(bH,gH,rH), matProcessed); //over qSlider  (50,30,130)
+    inRange(matHSV, Scalar(lH,lS,lV), Scalar(hH,hS,hV), matProcessed);
 
     // smoothing pixels
     GaussianBlur(matProcessed, matProcessed, Size(9,9), 1.5);
 
     // filtered object
     HoughCircles(matProcessed, vecCircles, CV_HOUGH_GRADIENT, 2, matProcessed.rows / 4,100,50,10,400);
+
+    //remove small objects from the foreground
+    erode(matProcessed, matProcessed, getStructuringElement(MORPH_ELLIPSE, Size(5,5)));
+    dilate(matProcessed, matProcessed, getStructuringElement(MORPH_ELLIPSE, Size(5,5)));
+
+    //fill small holes in the foreground
+    dilate(matProcessed, matProcessed, getStructuringElement(MORPH_ELLIPSE, Size(5,5)));
+    erode(matProcessed, matProcessed, getStructuringElement(MORPH_ELLIPSE, Size(5,5)));
 
 
     for(itrCircles = vecCircles.begin(); itrCircles != vecCircles.end(); itrCircles++){
@@ -64,33 +75,31 @@ void Dialog::processFrameAndUpdateGUI(){
                 QString(", radius =")+ QString::number((*itrCircles)[2], 'f' , 3).rightJustified(7, ' '));
 
         //visualisation (circle) of tracked object
-        circle(matOriginal, Point((int)(*itrCircles)[0], (int)(*itrCircles)[1]), 3 ,Scalar(0,255,0), CV_FILLED);
-        circle(matOriginal, Point((int)(*itrCircles)[0], (int)(*itrCircles)[1]),(int)(*itrCircles)[2] ,Scalar(0,0,255),3);
+        circle(matHSV, Point((int)(*itrCircles)[0], (int)(*itrCircles)[1]), 3 ,Scalar(0,255,0), CV_FILLED);
+        circle(matHSV, Point((int)(*itrCircles)[0], (int)(*itrCircles)[1]),(int)(*itrCircles)[2] ,Scalar(0,0,255),3);
 
         //setting tracking point as a mouse cursor
-        cursor->setPos(mapToGlobal(QPoint(640-(*itrCircles)[0], (*itrCircles)[1])));
-
+        if(cursorTracking == true){
+            cursor->setPos(mapToGlobal(QPoint(640-(*itrCircles)[0] +10, (*itrCircles)[1] +10)));
+        }
         //swipe left for play
-        if (((*itrCircles)[0]) > 630 && !audioTimer->isActive()){
+        if (((*itrCircles)[0]) >= 610 && !audioTimer->isActive()){
             audioTimer->start();
         }
         //swipe right for pause
-        if (((*itrCircles)[0]) < 5 && audioTimer->isActive()){
+        if (((*itrCircles)[0]) <= 21 && audioTimer->isActive()){
             audioTimer->stop();
         }
     }
 
-
-    cvtColor(matOriginal, matOriginal, CV_BGR2HSV);  //Convert 2 HSV
-
     // scaling container
     matOriginal = rescale(matOriginal);
+    matHSV = rescale(matHSV);
     matProcessed = rescale(matProcessed);
-    //dilate(matProcessed, matProcessed, Mat());
-    //erode(matProcessed, matProcessed, Mat());
 
     // convert opencv in QtImage
-    QImage imgHSV((uchar*)matOriginal.data, matOriginal.cols, matOriginal.rows, matOriginal.step, QImage::Format_RGB888);
+    //QImage imgHSV((uchar*)matOriginal.data, matOriginal.cols, matOriginal.rows, matOriginal.step, QImage::Format_RGB888);
+    QImage imgHSV((uchar*)matHSV.data, matHSV.cols, matHSV.rows, matHSV.step, QImage::Format_RGB888);
     QImage imgProcessed((uchar*)matProcessed.data, matProcessed.cols, matProcessed.rows, matProcessed.step, QImage::Format_Indexed8);
     QImage imgSrc((uchar*)matSrc.data, matSrc.cols, matSrc.rows, matSrc.step, QImage::Format_RGB888);
 
@@ -150,6 +159,21 @@ void Dialog::processAudio(){
 
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+// Button for start / stop cursor tracking
+void Dialog::on_btnCursorTr_clicked()
+{
+    if(ui->btnCursorTr->isChecked() == false){
+        cursorTracking = false;
+        ui->btnCursorTr->setText("Start Cursor");
+    }
+    else{
+        cursorTracking = true;
+        ui->btnCursorTr->setText("Stop Cursor");
+    }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 Mat Dialog::rescale(Mat &mat){
     // scale factor
     float labelWidth = ui->lblHSV->width();
@@ -178,32 +202,32 @@ Mat Dialog::rescale(Mat &mat){
 
 void Dialog::on_blueLow_valueChanged(int value)
 {
-    bL = value;
+    lH = value;
 }
 
 void Dialog::on_greenLow_valueChanged(int value)
 {
-    gL = value;
+    lS = value;
 }
 
 void Dialog::on_redLow_valueChanged(int value)
 {
-    rL = value;
+    lV = value;
 }
 
 void Dialog::on_blueHigh_valueChanged(int value)
 {
-    bH = value;
+    hH = value;
 }
 
 void Dialog::on_greenHigh_valueChanged(int value)
 {
-    gH = value;
+    hS = value;
 }
 
 void Dialog::on_redHigh_valueChanged(int value)
 {
-    rH = value;
+    hV = value;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -270,23 +294,6 @@ void Dialog::timerStart(){
 
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// initialize sliders
-
-void Dialog::initSlider(){
-
-    ui->blueLow->setRange(0,255);
-    ui->greenLow->setRange(0,255);
-    ui->redLow->setRange(0,255);
-    ui->blueHigh->setRange(0,255);
-    ui->greenHigh->setRange(0,255);
-    ui->redHigh->setRange(0,255);
-
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-
 // initialize methods, capturing source and user interface
 
 void Dialog::initialize()
@@ -304,5 +311,20 @@ void Dialog::initialize()
 
     pairUiButtonstoArray();
 
-    initSlider();
+    hsvTreshholdsInit();
+
+    cursorTracking = false;
 }
+
+void Dialog::hsvTreshholdsInit()
+{
+    hH = 179;
+    hS = 255;
+    hV = 255;
+
+    lH = 0;
+    lS= 0;
+    lV = 0;
+}
+
+

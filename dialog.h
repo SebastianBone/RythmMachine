@@ -31,22 +31,16 @@ private:
 
     cv::VideoCapture capWebCam;
 
-    cv::Mat matSrc;
-    cv::Mat matOriginal;
-    cv::Mat matHSV;
-    cv::Mat matProcessed;
-    cv::Mat matConturized;
+    cv::Mat matSrc, matOriginal, matHSV, matProcessed;
 
-    QImage imgOriginal;
-    QImage imgProcessed;
-    QImage imgGrayscale;
+    QImage imgOriginal, imgProcessed, imgGrayscale;
 
     std::vector<cv::Vec3f> vecCircles;
     std::vector<cv::Vec3f>::iterator itrCircles;
 
     QTimer *tmrTimer,*audioTimer;
 
-    int bH, gH, rH, bL, gL, rL;
+    int hH, hS, hV, lH, lS, lV;
 
     AudioEngine beatAudio, snareAudio, hitAudio, drumAudio;
 
@@ -55,10 +49,11 @@ private:
     QPushButton * hitButtons[8];
     QPushButton * drumButtons[8];
 
-    int index, btnIndex, idx;
+    int index;
 
     QCursor *cursor;
 
+    bool cursorTracking;
 
 public slots:
     void processFrameAndUpdateGUI();
@@ -66,8 +61,8 @@ public slots:
     void processAudio();
     void pairUiButtonstoArray();
     void timerStart();
-    void initSlider();
     void initialize();
+    void hsvTreshholdsInit();
 
 
 private slots:
@@ -79,6 +74,7 @@ private slots:
     void on_greenHigh_valueChanged(int value);
     void on_redHigh_valueChanged(int value);
     void on_btnPRCapt_clicked();
+    void on_btnCursorTr_clicked();
 };
 
 #endif // DIALOG_H

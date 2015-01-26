@@ -133,6 +133,9 @@
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
      <widget class="QSlider" name="blueLow">
+      <property name="maximum">
+       <number>179</number>
+      </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -140,6 +143,9 @@
     </item>
     <item>
      <widget class="QSlider" name="greenLow">
+      <property name="maximum">
+       <number>255</number>
+      </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -147,6 +153,9 @@
     </item>
     <item>
      <widget class="QSlider" name="redLow">
+      <property name="maximum">
+       <number>255</number>
+      </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -175,6 +184,18 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QSlider" name="blueHigh">
+      <property name="maximum">
+       <number>178</number>
+      </property>
+      <property name="pageStep">
+       <number>10</number>
+      </property>
+      <property name="value">
+       <number>178</number>
+      </property>
+      <property name="sliderPosition">
+       <number>178</number>
+      </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -182,6 +203,12 @@
     </item>
     <item>
      <widget class="QSlider" name="greenHigh">
+      <property name="maximum">
+       <number>255</number>
+      </property>
+      <property name="value">
+       <number>255</number>
+      </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -189,6 +216,12 @@
     </item>
     <item>
      <widget class="QSlider" name="redHigh">
+      <property name="maximum">
+       <number>255</number>
+      </property>
+      <property name="value">
+       <number>255</number>
+      </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -2700,7 +2733,7 @@ QPushButton:checked{
     </rect>
    </property>
    <property name="maximum">
-    <number>255</number>
+    <number>179</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="GLspinBox">
@@ -2739,7 +2772,10 @@ QPushButton:checked{
     </rect>
    </property>
    <property name="maximum">
-    <number>255</number>
+    <number>179</number>
+   </property>
+   <property name="value">
+    <number>179</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="GHspinBox">
@@ -2754,6 +2790,9 @@ QPushButton:checked{
    <property name="maximum">
     <number>255</number>
    </property>
+   <property name="value">
+    <number>255</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="RHspinBox">
    <property name="geometry">
@@ -2765,6 +2804,9 @@ QPushButton:checked{
     </rect>
    </property>
    <property name="maximum">
+    <number>255</number>
+   </property>
+   <property name="value">
     <number>255</number>
    </property>
   </widget>
@@ -2781,6 +2823,22 @@ QPushButton:checked{
     <string>Pause Capturing</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="btnCursorTr">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>650</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Start Cursor</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+  </widget>
   <zorder>label_4</zorder>
   <zorder>label_5</zorder>
   <zorder>labelSettings</zorder>
@@ -2795,13 +2853,13 @@ QPushButton:checked{
   <zorder>label</zorder>
   <zorder>label_3</zorder>
   <zorder>BLSlideBox</zorder>
-  <zorder>blueLow</zorder>
   <zorder>GLspinBox</zorder>
   <zorder>RLspinBox</zorder>
   <zorder>BHspinBox</zorder>
   <zorder>GHspinBox</zorder>
   <zorder>RHspinBox</zorder>
   <zorder>btnPRCapt</zorder>
+  <zorder>btnCursorTr</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
