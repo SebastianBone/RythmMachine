@@ -22,9 +22,6 @@ void ModQPushButton::enterEvent(QEvent *e)
     QPushButton::enterEvent(e);
     delayTimer->start();
 
-    //test
-    qDebug()<< "ENTERED";
-
 }
 
 // stop timer when leaving buttonarea
@@ -33,9 +30,6 @@ void ModQPushButton::leaveEvent(QEvent *e)
 {
     QPushButton::leaveEvent(e);
     delayTimer->stop();
-
-    //test
-    qDebug()<< "LEFT";
 
 }
 

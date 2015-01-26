@@ -69,26 +69,21 @@ void Dialog::processFrameAndUpdateGUI(){
 
     for(itrCircles = vecCircles.begin(); itrCircles != vecCircles.end(); itrCircles++){
 
-        //show position and radius of tracked object (just for debuging)
-        ui->txtConsole->appendPlainText(QString("object position x =") + QString::number((*itrCircles)[0]).rightJustified(4, ' ')+
-                QString(", y =")+ QString::number((*itrCircles)[1]).rightJustified(4, ' ')+
-                QString(", radius =")+ QString::number((*itrCircles)[2], 'f' , 3).rightJustified(7, ' '));
-
-        //visualisation (circle) of tracked object
-        circle(matHSV, Point((int)(*itrCircles)[0], (int)(*itrCircles)[1]), 3 ,Scalar(0,255,0), CV_FILLED);
-        circle(matHSV, Point((int)(*itrCircles)[0], (int)(*itrCircles)[1]),(int)(*itrCircles)[2] ,Scalar(0,0,255),3);
-
         //setting tracking point as a mouse cursor
         if(cursorTracking == true){
+
+            //show position and radius of tracked object (just for debuging)
+            ui->txtConsole->appendPlainText(QString("object position x =") + QString::number((*itrCircles)[0]).rightJustified(4, ' ')+
+                    QString(", y =")+ QString::number((*itrCircles)[1]).rightJustified(4, ' ')+
+                    QString(", radius =")+ QString::number((*itrCircles)[2], 'f' , 3).rightJustified(7, ' '));
+
+            //visualisation (circle) of tracked object
+            circle(matHSV, Point((int)(*itrCircles)[0], (int)(*itrCircles)[1]), 3 ,Scalar(0,255,0), CV_FILLED);
+            circle(matHSV, Point((int)(*itrCircles)[0], (int)(*itrCircles)[1]),(int)(*itrCircles)[2] ,Scalar(0,0,255),3);
+
             cursor->setPos(mapToGlobal(QPoint(640-(*itrCircles)[0] +10, (*itrCircles)[1] +10)));
-        }
-        //swipe left for play
-        if (((*itrCircles)[0]) >= 610 && !audioTimer->isActive()){
-            audioTimer->start();
-        }
-        //swipe right for pause
-        if (((*itrCircles)[0]) <= 21 && audioTimer->isActive()){
-            audioTimer->stop();
+
+            check4Swipe();
         }
     }
 
@@ -323,8 +318,23 @@ void Dialog::hsvTreshholdsInit()
     hV = 255;
 
     lH = 0;
-    lS= 0;
+    lS = 0;
     lV = 0;
 }
 
+void Dialog::check4Swipe()
+{
+    //swipe left for play
+    if(ui->play->isEntered() == true && !audioTimer->isActive()){
+        audioTimer->start();
+        ui->btnPauseResume->setText("Pause Audio");
+    }
 
+
+    //swipe right for pause
+    if ((ui->stop->isEntered()) == true && audioTimer->isActive()){
+        audioTimer->stop();
+        ui->btnPauseResume->setText("Resume Audio");
+    }
+
+}

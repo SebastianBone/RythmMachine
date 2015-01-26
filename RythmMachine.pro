@@ -15,11 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
     audioengine.cpp \
     dialog.cpp \
-    modqpushbutton.cpp
+    modqpushbutton.cpp \
+    modqlabel.cpp
 
 HEADERS  += dialog.h \
     audioengine.h \
-    modqpushbutton.h
+    modqpushbutton.h \
+    modqlabel.h
 
 FORMS    += dialog.ui
 

@@ -9,6 +9,7 @@
 #include "audioengine.h"
 #include <QCursor>
 #include "modqpushbutton.h"
+#include "modqlabel.h"
 
 /////////////////////////////////////////////////////////////
 namespace Ui {
@@ -53,6 +54,8 @@ private:
 
     QCursor *cursor;
 
+    modQLabel lblEnter;
+
     bool cursorTracking;
 
 public slots:
@@ -63,6 +66,7 @@ public slots:
     void timerStart();
     void initialize();
     void hsvTreshholdsInit();
+    void check4Swipe();
 
 
 private slots:

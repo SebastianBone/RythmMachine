@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="cursor">
-   <cursorShape>PointingHandCursor</cursorShape>
+   <cursorShape>ArrowCursor</cursorShape>
   </property>
   <property name="mouseTracking">
    <bool>false</bool>
@@ -257,6 +257,9 @@
      <height>481</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
@@ -267,7 +270,7 @@
     <item>
      <widget class="QGroupBox" name="beat">
       <property name="cursor">
-       <cursorShape>ArrowCursor</cursorShape>
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="autoFillBackground">
        <bool>false</bool>
@@ -2839,6 +2842,78 @@ QPushButton:checked{
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="modQLabel" name="stop">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>20</y>
+     <width>31</width>
+     <height>481</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	background-color:rgba(217, 0, 0, 0.3)
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="modQLabel" name="play">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>31</width>
+     <height>481</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	background-color:rgba(0, 217, 0, 0.3)
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>false</bool>
+   </property>
+  </widget>
   <zorder>label_4</zorder>
   <zorder>label_5</zorder>
   <zorder>labelSettings</zorder>
@@ -2860,6 +2935,8 @@ QPushButton:checked{
   <zorder>RHspinBox</zorder>
   <zorder>btnPRCapt</zorder>
   <zorder>btnCursorTr</zorder>
+  <zorder>stop</zorder>
+  <zorder>play</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -2867,6 +2944,11 @@ QPushButton:checked{
    <class>ModQPushButton</class>
    <extends>QPushButton</extends>
    <header location="global">modqpushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>modQLabel</class>
+   <extends>QLabel</extends>
+   <header location="global">modqlabel.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
@@ -2974,8 +3056,8 @@ QPushButton:checked{
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>899</x>
-     <y>599</y>
+     <x>896</x>
+     <y>628</y>
     </hint>
     <hint type="destinationlabel">
      <x>991</x>
@@ -2994,8 +3076,8 @@ QPushButton:checked{
      <y>612</y>
     </hint>
     <hint type="destinationlabel">
-     <x>897</x>
-     <y>611</y>
+     <x>896</x>
+     <y>640</y>
     </hint>
    </hints>
   </connection>
@@ -3006,8 +3088,8 @@ QPushButton:checked{
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>921</x>
-     <y>637</y>
+     <x>917</x>
+     <y>666</y>
     </hint>
     <hint type="destinationlabel">
      <x>977</x>
@@ -3038,8 +3120,8 @@ QPushButton:checked{
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>947</x>
-     <y>654</y>
+     <x>938</x>
+     <y>672</y>
     </hint>
     <hint type="destinationlabel">
      <x>986</x>
@@ -3058,8 +3140,8 @@ QPushButton:checked{
      <y>670</y>
     </hint>
     <hint type="destinationlabel">
-     <x>944</x>
-     <y>668</y>
+     <x>938</x>
+     <y>672</y>
     </hint>
    </hints>
   </connection>
