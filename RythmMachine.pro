@@ -72,4 +72,9 @@ OTHER_FILES += \
     audio/BD.wav \
     audio/KC.wav \
     audio/snare.wav \
-    audio/hit.wav
+    audio/hit.wav \
+    audio/BEAT.wav \
+    audio/HIT-1.wav \
+    audio/HITCa-2.wav \
+    audio/HitCb-9.wav \
+    audio/BASS.wav

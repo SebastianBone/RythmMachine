@@ -1,4 +1,5 @@
 #include "audioengine.h"
+#include <QDebug>
 
 AudioEngine::AudioEngine()
 {
@@ -7,9 +8,14 @@ AudioEngine::AudioEngine()
 // playsound method
 
 void AudioEngine::playSound(const std::string clip){
+
+    buffer.loadFromFile(clip);
+
     if (!buffer.loadFromFile(clip)){
+        qDebug() << "File not found or Format not supported";
         return;
     }
+
     sound.setBuffer(buffer);
     sound.play();
 }
@@ -17,7 +23,11 @@ void AudioEngine::playSound(const std::string clip){
 // loop soundfile
 
 void AudioEngine::loop(const std::string clip){
+
+    buffer.loadFromFile(clip);
+
     if (!buffer.loadFromFile(clip)){
+        qDebug() << "File not found or Format not supported";
         return;
     }
     sound.setBuffer(buffer);

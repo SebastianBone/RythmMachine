@@ -140,16 +140,16 @@ void Dialog::on_btnPRCapt_clicked()
 void Dialog::processAudio(){
 
     if(beatButtons[index]->isChecked()){
-        beatAudio.playSound("audio/KC.wav");
+        beatAudio.playSound("audio/BASS.wav");
     }
     if(snareButtons[index]->isChecked()){
-        snareAudio.playSound("audio/snare.wav");
+        snareAudio.playSound("audio/HITCa-2.wav");
     }
     if(hitButtons[index]->isChecked()){
-        hitAudio.playSound("audio/hit.wav");
+        hitAudio.playSound("audio/HIT-1.wav");
     }
     if(drumButtons[index]->isChecked()){
-        drumAudio.playSound("audio/BD.wav");
+        drumAudio.playSound("audio/BEAT.wav");
     }
     // index for soundinterval
     index = (index + 1) % 8;
