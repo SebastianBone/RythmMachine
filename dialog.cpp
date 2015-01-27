@@ -30,6 +30,29 @@ Dialog::~Dialog()
 {
     delete ui;
 }
+///////////////////////////////////////////////////////
+// initialize methods, capturing source and user interface
+
+void Dialog::initialize()
+{
+    ui->setupUi(this);
+
+    capWebCam.open(0);
+
+    if(!capWebCam.isOpened()){
+        ui->txtConsole->appendPlainText("***error***: check cammera settings");
+        return;
+    }
+
+    timerStart();
+
+    pairUiButtonstoArray();
+
+    hsvTreshholdsInit();
+
+    cursorTracking = false;
+}
+
 
 ///////////////////////////////////////////////////////
 void Dialog::processFrameAndUpdateGUI(){
@@ -121,6 +144,8 @@ void Dialog::on_btnPauseResume_clicked()
     }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////
+
 //capturing pause button
 void Dialog::on_btnPRCapt_clicked()
 {
@@ -195,7 +220,7 @@ Mat Dialog::rescale(Mat &mat){
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// set values when slider changed
+// set HSV values when slider changed
 
 void Dialog::on_blueLow_valueChanged(int value)
 {
@@ -290,29 +315,7 @@ void Dialog::timerStart(){
     audioTimer->start();
 
 }
-
-// initialize methods, capturing source and user interface
-
-void Dialog::initialize()
-{
-    ui->setupUi(this);
-
-    capWebCam.open(0);
-
-    if(!capWebCam.isOpened()){
-        ui->txtConsole->appendPlainText("***error***: check cammera settings");
-        return;
-    }
-
-    timerStart();
-
-    pairUiButtonstoArray();
-
-    hsvTreshholdsInit();
-
-    cursorTracking = false;
-}
-
+///////////////////////////////////////////////////////////////////////////
 void Dialog::hsvTreshholdsInit()
 {
     hH = 179;
@@ -324,6 +327,7 @@ void Dialog::hsvTreshholdsInit()
     lV = 0;
 }
 
+////////////////////////////////////////////////////////////////////////////
 void Dialog::check4Swipe()
 {
     //swipe left for play
