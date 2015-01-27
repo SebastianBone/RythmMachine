@@ -76,7 +76,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>8</pointsize>
+     <pointsize>9</pointsize>
     </font>
    </property>
    <property name="autoFillBackground">
@@ -101,6 +101,9 @@ QPushButton:checked{
    </property>
    <property name="text">
     <string>Pause Audio</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
    </property>
    <property name="flat">
     <bool>false</bool>
@@ -342,7 +345,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(170, 85, 255,.3);
 	margin:5px;
 }
@@ -351,10 +354,9 @@ QPushButton:hover{
 	background-color: rgba(170, 85, 255,.5);
 }
 QPushButton:checked{
-	
+	border: none;
 	background-color: rgba(170, 85, 255,.6);
-}
-</string>
+}</string>
          </property>
          <property name="text">
           <string/>
@@ -407,7 +409,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(170, 85, 255,.3);
 	margin:5px;
 }
@@ -416,10 +418,9 @@ QPushButton:hover{
 	background-color: rgba(170, 85, 255,.5);
 }
 QPushButton:checked{
-	
+	border: none;
 	background-color: rgba(170, 85, 255,.6);
-}
-</string>
+}</string>
          </property>
          <property name="text">
           <string/>
@@ -472,7 +473,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(170, 85, 255,.3);
 	margin:5px;
 }
@@ -481,10 +482,9 @@ QPushButton:hover{
 	background-color: rgba(170, 85, 255,.5);
 }
 QPushButton:checked{
-	
+	border: none;
 	background-color: rgba(170, 85, 255,.6);
-}
-</string>
+}</string>
          </property>
          <property name="text">
           <string/>
@@ -534,7 +534,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(170, 85, 255,.3);
 	margin:5px;
 }
@@ -543,10 +543,9 @@ QPushButton:hover{
 	background-color: rgba(170, 85, 255,.5);
 }
 QPushButton:checked{
-	
+	border: none;
 	background-color: rgba(170, 85, 255,.6);
-}
-</string>
+}</string>
          </property>
          <property name="text">
           <string/>
@@ -596,7 +595,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(170, 85, 255,.3);
 	margin:5px;
 }
@@ -605,10 +604,9 @@ QPushButton:hover{
 	background-color: rgba(170, 85, 255,.5);
 }
 QPushButton:checked{
-	
+	border: none;
 	background-color: rgba(170, 85, 255,.6);
-}
-</string>
+}</string>
          </property>
          <property name="text">
           <string/>
@@ -661,7 +659,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(170, 85, 255,.3);
 	margin:5px;
 }
@@ -670,10 +668,9 @@ QPushButton:hover{
 	background-color: rgba(170, 85, 255,.5);
 }
 QPushButton:checked{
-	
+	border: none;
 	background-color: rgba(170, 85, 255,.6);
-}
-</string>
+}</string>
          </property>
          <property name="text">
           <string/>
@@ -723,7 +720,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(170, 85, 255,.3);
 	margin:5px;
 }
@@ -732,10 +729,9 @@ QPushButton:hover{
 	background-color: rgba(170, 85, 255,.5);
 }
 QPushButton:checked{
-	
+	border: none;
 	background-color: rgba(170, 85, 255,.6);
-}
-</string>
+}</string>
          </property>
          <property name="text">
           <string/>
@@ -785,7 +781,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(170, 85, 255,.3);
 	margin:5px;
 }
@@ -794,10 +790,9 @@ QPushButton:hover{
 	background-color: rgba(170, 85, 255,.5);
 }
 QPushButton:checked{
-	
+	border: none;
 	background-color: rgba(170, 85, 255,.6);
-}
-</string>
+}</string>
          </property>
          <property name="text">
           <string/>
@@ -967,7 +962,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(0, 170, 255,.3);
 	margin:5px;
 }
@@ -976,7 +971,7 @@ QPushButton:hover{
 	background-color: rgba(0, 170, 255,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(0, 170, 255,.6);
 }
 </string>
@@ -1125,7 +1120,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(0, 170, 255,.3);
 	margin:5px;
 }
@@ -1134,7 +1129,7 @@ QPushButton:hover{
 	background-color: rgba(0, 170, 255,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(0, 170, 255,.6);
 }
 </string>
@@ -1283,7 +1278,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(0, 170, 255,.3);
 	margin:5px;
 }
@@ -1292,7 +1287,7 @@ QPushButton:hover{
 	background-color: rgba(0, 170, 255,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(0, 170, 255,.6);
 }
 </string>
@@ -1444,7 +1439,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(0, 170, 255,.3);
 	margin:5px;
 }
@@ -1453,7 +1448,7 @@ QPushButton:hover{
 	background-color: rgba(0, 170, 255,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(0, 170, 255,.6);
 }
 </string>
@@ -1602,7 +1597,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(0, 170, 255,.3);
 	margin:5px;
 }
@@ -1611,7 +1606,7 @@ QPushButton:hover{
 	background-color: rgba(0, 170, 255,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(0, 170, 255,.6);
 }
 </string>
@@ -1760,7 +1755,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(0, 170, 255,.3);
 	margin:5px;
 }
@@ -1769,7 +1764,7 @@ QPushButton:hover{
 	background-color: rgba(0, 170, 255,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(0, 170, 255,.6);
 }
 </string>
@@ -1918,7 +1913,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(0, 170, 255,.3);
 	margin:5px;
 }
@@ -1927,7 +1922,7 @@ QPushButton:hover{
 	background-color: rgba(0, 170, 255,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(0, 170, 255,.6);
 }
 </string>
@@ -2076,7 +2071,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(0, 170, 255,.3);
 	margin:5px;
 }
@@ -2085,7 +2080,7 @@ QPushButton:hover{
 	background-color: rgba(0, 170, 255,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(0, 170, 255,.6);
 }
 </string>
@@ -2123,7 +2118,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,255,0,.3);
 	margin:5px;
 }
@@ -2132,7 +2127,7 @@ QPushButton:hover{
 	background-color: rgba(255,255,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,255,0,.6);
 }
 </string>
@@ -2155,7 +2150,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,255,0,.3);
 	margin:5px;
 }
@@ -2164,7 +2159,7 @@ QPushButton:hover{
 	background-color: rgba(255,255,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,255,0,.6);
 }
 </string>
@@ -2187,7 +2182,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,255,0,.3);
 	margin:5px;
 }
@@ -2196,7 +2191,7 @@ QPushButton:hover{
 	background-color: rgba(255,255,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,255,0,.6);
 }
 </string>
@@ -2219,7 +2214,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,255,0,.3);
 	margin:5px;
 }
@@ -2228,7 +2223,7 @@ QPushButton:hover{
 	background-color: rgba(255,255,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,255,0,.6);
 }
 </string>
@@ -2251,7 +2246,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,255,0,.3);
 	margin:5px;
 }
@@ -2260,7 +2255,7 @@ QPushButton:hover{
 	background-color: rgba(255,255,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,255,0,.6);
 }
 </string>
@@ -2283,7 +2278,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,255,0,.3);
 	margin:5px;
 }
@@ -2292,7 +2287,7 @@ QPushButton:hover{
 	background-color: rgba(255,255,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,255,0,.6);
 }
 </string>
@@ -2315,7 +2310,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,255,0,.3);
 	margin:5px;
 }
@@ -2324,7 +2319,7 @@ QPushButton:hover{
 	background-color: rgba(255,255,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,255,0,.6);
 }
 </string>
@@ -2347,7 +2342,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,255,0,.3);
 	margin:5px;
 }
@@ -2356,7 +2351,7 @@ QPushButton:hover{
 	background-color: rgba(255,255,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,255,0,.6);
 }
 </string>
@@ -2394,7 +2389,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,170,0,.3);
 	margin:5px;
 }
@@ -2403,7 +2398,7 @@ QPushButton:hover{
 	background-color: rgba(255,170,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,170,0,.6);
 }
 </string>
@@ -2426,7 +2421,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,170,0,.3);
 	margin:5px;
 }
@@ -2435,7 +2430,7 @@ QPushButton:hover{
 	background-color: rgba(255,170,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,170,0,.6);
 }
 </string>
@@ -2458,7 +2453,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,170,0,.3);
 	margin:5px;
 }
@@ -2467,7 +2462,7 @@ QPushButton:hover{
 	background-color: rgba(255,170,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,170,0,.6);
 }
 </string>
@@ -2490,7 +2485,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,170,0,.3);
 	margin:5px;
 }
@@ -2499,7 +2494,7 @@ QPushButton:hover{
 	background-color: rgba(255,170,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,170,0,.6);
 }
 </string>
@@ -2522,7 +2517,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,170,0,.3);
 	margin:5px;
 }
@@ -2531,7 +2526,7 @@ QPushButton:hover{
 	background-color: rgba(255,170,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,170,0,.6);
 }
 </string>
@@ -2554,7 +2549,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,170,0,.3);
 	margin:5px;
 }
@@ -2563,7 +2558,7 @@ QPushButton:hover{
 	background-color: rgba(255,170,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,170,0,.6);
 }
 </string>
@@ -2586,7 +2581,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,170,0,.3);
 	margin:5px;
 }
@@ -2595,7 +2590,7 @@ QPushButton:hover{
 	background-color: rgba(255,170,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,170,0,.6);
 }
 </string>
@@ -2618,7 +2613,7 @@ QPushButton:checked{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	border:none;
+	border: 2px solid rgba(255,255,255,.5);
 	background-color: rgba(255,170,0,.3);
 	margin:5px;
 }
@@ -2627,7 +2622,7 @@ QPushButton:hover{
 	background-color: rgba(255,170,0,.5);
 }
 QPushButton:checked{
-	
+	border:none;
 	background-color: rgba(255,170,0,.6);
 }
 </string>
@@ -2869,6 +2864,11 @@ QPushButton:checked{
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{
 	border : 1px solid white;
@@ -2888,6 +2888,9 @@ QPushButton:checked{
    </property>
    <property name="text">
     <string>Pause Capturing</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btnCursorTr">
